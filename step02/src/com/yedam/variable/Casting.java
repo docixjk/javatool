@@ -20,6 +20,17 @@ public class Casting {
 		
 		double doubleValue = longValue;
 		System.out.println("doubleValue : " + doubleValue);
+		
+		// 강제 타입 변환
+		// 작은 허용 범위 타입 = ( 작은 허용 범위 타입 ) 큰 범위 타입
+		int intVar = 200;
+		byte byteVar = (byte)intVar;
+		System.out.println("byteVar : " + byteVar);
+		
+		int intVar2 = 44032;
+		char charVar = (char)intVar2;
+		
+		System.out.println("charVar : " + charVar);
 	}
 
 }
