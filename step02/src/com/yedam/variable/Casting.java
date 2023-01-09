@@ -3,6 +3,7 @@ package com.yedam.variable;
 public class Casting {
 
 	public static void main(String[] args) {
+		
 		//자동타입변환
 		byte byteValue = 10;
 		int intValue = byteValue;
@@ -23,14 +24,24 @@ public class Casting {
 		
 		// 강제 타입 변환
 		// 작은 허용 범위 타입 = ( 작은 허용 범위 타입 ) 큰 범위 타입
-		int intVar = 200;
-		byte byteVar = (byte)intVar;
+		int intVar = 127;
+		byte byteVar = (byte)intVar; //int값으로 넣으려면 꼭 (int)를 앞에 넣어야함
 		System.out.println("byteVar : " + byteVar);
 		
 		int intVar2 = 44032;
 		char charVar = (char)intVar2;
 		
 		System.out.println("charVar : " + charVar);
+		
+		// 실수 <-> 정수간 강제 타입 변환
+		// 자동타입변환 : int -> double = 3.0
+		// 강제타입변환 : double -> int = 소수점 땐 정수만 타입 변환
+		double doubleVar = 3.14;
+		intVar2 = (int)doubleVar;
+		System.out.println("intVar2 : " + intVar2);
+		
+		// 연산할 때 가장 큰 type으로 바뀐다 ex) int + int + long = long
+		// 둘 중 하나라도 double 이면 double로 바뀐다 ex) int + double = double
 	}
 
 }
