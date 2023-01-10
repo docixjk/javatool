@@ -93,14 +93,13 @@ public class Homework {
 		    출력예시) A278번지10.0 */
 		int intValue1 = 24;
 		int intValue2 = 3;
-		char intValue3 = '8';
-		double intValue4 = 10;
+		int intValue3 = 8;
+		int intValue4 = 10;
 		char charValue = 'A';
 		String strValue = "번지";
 		
-		int intSum = intValue1 + intValue2 + intValue3;
-		
-		System.out.printf("%s%s%s%f",charValue,intSum,strValue,intValue4);
+		System.out.printf("%c%d%d%s%.2f", charValue, intValue1 + intValue2, intValue3, strValue, (double)intValue4);
+		System.out.println();
 		
 		
 		
@@ -108,6 +107,11 @@ public class Homework {
 		    예시) 373 일 경우 3 + 7 + 3 = 13 으로 결과는 13입니다.
 		    힌트) 곱하기 연산자 (*), 나누기 연산자( / ) 와 빼기 연산자 ( - ) 를 이용하세요. */
 		int value = 485;
+		// 100자리 수는 100나누기 10자리 수는 10 나누기
+	      System.out.printf(" 4 + 8 + 5 = %d", 
+	                     ((value-85)/100)
+	                     + ((value-405)/10)
+	                     + (value-480));
 
 	}
 
