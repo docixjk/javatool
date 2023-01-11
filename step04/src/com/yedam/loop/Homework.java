@@ -38,7 +38,7 @@ public class Homework {
 		// HiNT : 이중 IF문 사용
 		// 문제출처, 백준(https://www.acmicpc.net/) 2753번 문제
 		// 연도 스캐너로 받아오기
-		//답안
+		// 답안
 //		System.out.print("확인할 연도를 입력해주세요 > ");
 //		int year = Integer.parseInt(sc.next());
 //		if (((year % 4 == 0) && (year % 100 == 1)) || (year % 400 == 0)) {
@@ -51,7 +51,7 @@ public class Homework {
 		// 구현하세요.
 		// 예를 들어, 가위가 주어졌을 때 "이기기 위해선 바위를 내야합니다." 라고 출력하도록 하세요.
 		// 한 단어를 입력받을 경우 Scanner객체의 next() 함수를 사용하면 됩니다.
-		//답안
+		// 답안
 //		System.out.print("가위 바위 보 중 하나를 입력 : ");
 //		String game = sc.next();
 //		switch(game){
@@ -67,9 +67,7 @@ public class Homework {
 //		default:
 //			System.out.println("다른 게임을 하고 계신가요?");
 //		}
-		
-		
-		
+
 		// 문제4) for문과 "*"를 이용하여 아래와 같이 출력하도록 하세요.
 		// hint) 중첩 for문과 if문(띄어쓰기용도) 활용
 		// *
@@ -77,34 +75,38 @@ public class Homework {
 		// ***
 		// ****
 		// *****
-		//답안
-//		for(int i=1;i<=5;i++) { //줄바꿈용도
-//			for(int j=0;j<i;j++) { //한줄에 별 뽑아내기
-//				System.out.print("*");
+		// 답안
+//		for (int i = 1; i <= 5; i++) { // 줄바꿈용도
+//			for (int j = 5; j >= 1; j--) { // 한줄에 별 뽑아내기
+//				if (i < j) {
+//					System.out.print(" ");
+//				} else {
+//					System.out.print("*");
+//				}
 //			}
 //			System.out.println();
+//
 //		}
-		
+
 		// 문제5) 차례대로 m과 n을 입력받아 m단을 n번째까지 출력하도록 하세요.
 		// 예를 들어 2와 3을 입력받았을 경우 아래처럼 출력합니다.
 		// 2 X 1 = 2
 		// 2 X 2 = 4
 		// 2 X 3 = 6
-		System.out.print("몇 단 : ");
-		int m = Integer.parseInt(sc.next());
-		System.out.print("몇 번째 : ");
-		int n = Integer.parseInt(sc.next());
-		
-		//처음 수를 받아서 줄바꿈에 사용
-		for(int i = 1; i<=1;i++){
-			// 두번째 수를 받아서 몇 번째까지 출력할건지 받아야함
-			for(int j=1;j<=n;j++) {
-				System.out.printf("%d 곱하기 %d = %d 입니다.\n",m, j, m*j);
-			}
-			
-		}
-		
-		
+		// 답안
+//		System.out.print("몇 단 : ");
+//		int m = Integer.parseInt(sc.next());
+//		System.out.print("몇 번째 : ");
+//		int n = Integer.parseInt(sc.next());
+//		
+//		//처음 수를 받아서 줄바꿈에 사용
+//		for(int i = 1; i<=1;i++){
+//			// 두번째 수를 받아서 몇 번째까지 출력할건지 받아야함
+//			for(int j=1;j<=n;j++) {
+//				System.out.printf("%d 곱하기 %d = %d 입니다.\n",m, j, m*j);
+//			}
+//			
+//		}
 
 	}
 

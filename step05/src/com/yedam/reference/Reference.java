@@ -1,0 +1,19 @@
+package com.yedam.reference;
+
+public class Reference {
+
+	public static void main(String[] args) {
+		int intVal = 10;
+		int[] array = { 1, 2, 3, 4, 5, 6 };
+		int[] array2 = { 1, 2, 3, 4, 5, 6 };
+		int[] array3 = null;
+
+		System.out.println(array); // 주소 번지가 나옴
+		System.out.println(array2);
+		//서로 다른 주소 값
+		System.out.println(array == array2);
+		System.out.println(intVal);
+		System.out.println(array3);
+	}
+
+}
