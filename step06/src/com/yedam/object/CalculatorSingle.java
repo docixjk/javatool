@@ -1,10 +1,24 @@
 package com.yedam.object;
 
-public class Calculator {
+//필요시마다 매번 객체를 생성하지 않고 한번만 객체를 생성하고 필요시 참조
+
+
+public class CalculatorSingle {
+	//싱글톤
+	static CalculatorSingle instance = new CalculatorSingle();
+	//참조할 수 있는 메소드
+	static CalculatorSingle getInstance() {
+		return instance;
+	}
+	
+	
 	// 필드
 
 	// 생성자
-
+	//사용 못하게 막음
+	private CalculatorSingle() {} 
+	
+	
 	// 메소드
 	// 메소드 리턴 타입이 존재할 때
 	// 실행에 필요한 데이터를 외부에서 받아 저장할 목적

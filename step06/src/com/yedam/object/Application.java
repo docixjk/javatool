@@ -7,6 +7,9 @@ public class Application {
 	public static void main(String[] args) {
 		// Student 타입의 변수에 Student 주소값을 넣어 줌 ( 객체 생성 ) - 1
 		// 클래스 >> 객체 << 인스턴스
+		// 스택은 아래서 위로 쌓이고 힙은 위에서 아래로 내린다
+		// 힙 - 메모리 용량 할당 , 스택 - 객체가 가리키는 주소값을 받는다
+		// 참조변수 선언 - 힙영역에 메모리 할당(객체생성) - 인스턴스가 참조하게 됨
 //		Student s1 = new Student();
 //
 //		Student s2 = new Student();
@@ -112,16 +115,16 @@ public class Application {
 					System.out.printf("총 합 : %d | 평 균 : %.2f\n", total, avg);
 				}
 				// 시험 최고 점수, 최저 점수
-				//초기화
+				// 초기화
 				int max = 0;
 				int min = 0;
-				//몇번의 인덱스 안에 있는 점수를 비교
+				// 몇번의 인덱스 안에 있는 점수를 비교
 				for (int i = 0; i < stdAry.length; i++) {
-					//최대, 최소 값을 첫번째 값으로 넣어줌 (비교를 위해서)
+					// 최대, 최소 값을 첫번째 값으로 넣어줌 (비교를 위해서)
 					max = stdAry[i].kor;
 					min = stdAry[i].kor;
 
-					//다른 점수들을 비교해 최대값을 정함
+					// 다른 점수들을 비교해 최대값을 정함
 					if (stdAry[i].eng < stdAry[i].math) {
 						if (max < stdAry[i].math) {
 							max = stdAry[i].math;
