@@ -6,7 +6,7 @@ public class PlayGame {
 	// 필드
 	Scanner sc = new Scanner(System.in);
 	public int choice;
-	public static int randomGame;
+	public static double randomGame;
 	public static int gameMode;
 	RPGgame rpGgame = new RPGgame();
 	ArcadeGame ag = new ArcadeGame();
@@ -16,20 +16,20 @@ public class PlayGame {
 	}
 
 	// 메소드
-	public int random() {
+	public double random() {
 		// 게임 랜덤으로 고르기
-		randomGame = (int)(Math.random());
+		randomGame = (Math.random());
 		return randomGame;
 	}
 
 	public void game() {
-		if (randomGame == 1) {
+		if (randomGame < 0.5) {
 			System.out.println("RPGgame 실행");
-			gameMode =0;
+			gameMode = 0;
 
-		} else{
+		} else {
 			System.out.println("ArcadeGame 실행");
-			gameMode=1;
+			gameMode = 1;
 		}
 	}
 
@@ -58,7 +58,7 @@ public class PlayGame {
 				rpGgame.rightDownButton();
 			} else if (choice == 5) {
 				rpGgame.changeMode();
-			}else if (choice == 0) {
+			} else if (choice == 0) {
 				System.out.println("ArcadeGame 실행");
 				gameMode = 1;
 
@@ -68,7 +68,7 @@ public class PlayGame {
 			} else {
 				System.out.println("메뉴에 없는 번호 입니다.");
 			}
-		}else {
+		} else {
 			if (choice == 1) {
 				ag.leftUpButton();
 			} else if (choice == 2) {
@@ -79,7 +79,7 @@ public class PlayGame {
 				ag.rightDownButton();
 			} else if (choice == 5) {
 				ag.changeMode();
-			}else if (choice == 0) {
+			} else if (choice == 0) {
 				System.out.println("RPGgame 실행");
 				gameMode = 0;
 
