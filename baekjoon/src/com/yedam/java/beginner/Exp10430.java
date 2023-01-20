@@ -8,14 +8,12 @@ public class Exp10430 {
 		
 		Scanner sc = new Scanner(System.in);
 		int a, b, c;
-		String[] strNum = new String[3];
 
 		while(true) {
-			strNum = sc.nextLine().split(" ");
 	
-			a = Integer.parseInt(strNum[0]);
-			b = Integer.parseInt(strNum[1]);
-			c = Integer.parseInt(strNum[2]);
+			a = Integer.parseInt(sc.next());
+			b = Integer.parseInt(sc.next());
+			c = Integer.parseInt(sc.next());
 			
 			if ((2 > a || a > 10000)||
 				(2 > b || b > 10000)||

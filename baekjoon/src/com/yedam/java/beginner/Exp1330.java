@@ -7,17 +7,10 @@ public class Exp1330 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		// 문자열 배열 선언 개수는 2개 : 공백을 기준으로 수 두개를 받기위해서
-		String[] strNum = new String[2];
-
 		int a, b;
 		while (true) {
-			// 엔터 치는 순간 공백을 기준으로 나눔
-			strNum = sc.nextLine().split(" ");
-
-			// 배열 내의 문자열을 숫자로 변환
-			a = Integer.parseInt(strNum[0]);
-			b = Integer.parseInt(strNum[1]);
+			a = Integer.parseInt(sc.next());
+			b = Integer.parseInt(sc.next());
 
 			// x와 y는 1이상 10000이하여야함
 			if ((1 <= a || a <= 10000) || (1 <= b || b <= 10000))

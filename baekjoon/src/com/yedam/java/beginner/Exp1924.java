@@ -11,14 +11,12 @@ public class Exp1924 {
 
 		Scanner sc = new Scanner(System.in);
 
-		String[] date = new String[2];
 		int inputMonths, inputDay;
 
 		while (true) {
-			date = sc.nextLine().split(" ");
 
-			inputMonths = Integer.parseInt(date[0]);
-			inputDay = Integer.parseInt(date[1]);
+			inputMonths = Integer.parseInt(sc.next());
+			inputDay = Integer.parseInt(sc.next());
 			if ((1 <= inputMonths && inputMonths <= 12) && (1 <= inputDay && inputDay <= 31))
 				break;
 			else

@@ -7,14 +7,10 @@ public class Exp2525 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
-		String[] time = new String[2];
-
 		int hour, minute, minute2;
 		while (true) {
-			time = sc.nextLine().split(" ");
-
-			hour = Integer.parseInt(time[0]);
-			minute = Integer.parseInt(time[1]);
+			hour = Integer.parseInt(sc.next());
+			minute = Integer.parseInt(sc.next());
 			if ((0 <= hour && hour <= 23) && (0 <= minute && minute <= 59)) {
 				minute2 = Integer.parseInt(sc.next());
 				if (0 <= minute2 && minute2 <= 1000)

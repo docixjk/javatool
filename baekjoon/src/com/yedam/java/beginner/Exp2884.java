@@ -1,20 +1,32 @@
 package com.yedam.java.beginner;
 
-import java.util.Calendar;
+import java.util.*;
 
 public class Exp2884 {
 
 	public static void main(String[] args) {
-		// Calendar는 추상클래스라 new를 사용하지 않음 ( 싱글톤 )
-		// 반환 받기위해 getInstance() 를 쓴다.
-		Calendar now = Calendar.getInstance();
+		Scanner sc = new Scanner(System.in);
 
-		int hour = now.get(Calendar.HOUR); // 시
-		int minute = now.get(Calendar.MINUTE);// 분
+		int H, M;
 
-		System.out.print(hour + "시 ");
-		System.out.print(minute + "분 ");
+		while (true) {
+			H = Integer.parseInt(sc.next());
+			M = Integer.parseInt(sc.next());
 
+			if ((0 <= H && H <= 23) && (0 <= M) && (M <= 59))
+				break;
+			else
+				System.out.println("잘못된 시간입니다.");
+		}
+
+		if (M < 45) {
+			H--;
+			M = 60 - (45 - M);
+			if (H < 0)
+				H = 23;
+			System.out.println(H + " " + M);
+		} else 
+			System.out.println(H + " " + (M - 45));
 	}
 
 }
