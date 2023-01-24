@@ -16,13 +16,9 @@ public class Exp11720 {
 			//한 줄 입력한 것을 ""로 자른다
 			String[] str =sc.nextLine().split("");
 			
-			// 자른 값이 곧 배열 길이 값
-			int[] num = new int[str.length];
-			
 			//배열 길이만큼 숫자로 변환해 총 합 구함
-			for(int i=0;i<str.length;i++) {
-				num[i] = Integer.parseInt(str[i]);
-				result += num[i];
+			for(int i=0;i<N;i++) {
+				result += Integer.parseInt(str[i]);
 			}
 			System.out.println(result);
 		}

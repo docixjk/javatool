@@ -48,11 +48,8 @@ public class Exp4344 {
 					count++;
 				}
 			}
-
 			System.out.printf("%.3f%%\n", (count / N) * 100);
 		}
 		sc.close();
-
 	}
-
 }
