@@ -27,7 +27,7 @@ public class Exp10845 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Queue<Integer> link = new LinkedList<>();
 		StringBuilder sb = new StringBuilder();
-		
+
 		int N = Integer.parseInt(br.readLine());
 		int num = 0;
 
@@ -48,6 +48,7 @@ public class Exp10845 {
 				if (link.isEmpty()) {
 					sb.append(-1).append("\n");
 				} else {
+					// 맨 앞 제외하고 가져오기
 					sb.append(link.poll()).append("\n");
 				}
 				break;
@@ -69,6 +70,7 @@ public class Exp10845 {
 				if (link.isEmpty()) {
 					sb.append(-1).append("\n");
 				} else {
+					// peek()는 맨 앞 빼오기
 					sb.append(link.peek()).append("\n");
 				}
 				break;
@@ -82,8 +84,9 @@ public class Exp10845 {
 				}
 				break;
 			}
-			
+
 		}
+		System.out.println(sb);
 
 	}
 
