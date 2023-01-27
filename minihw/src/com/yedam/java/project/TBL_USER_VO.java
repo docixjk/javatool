@@ -77,9 +77,9 @@ public class TBL_USER_VO {
 			name += "\t";
 		}
 		if(subject.length() <= 5) {
-			name += "\t";
+			subject += "\t";
 		}
-		return  "       예담직업전문학교 수강생 정보      "+
+		return  "       예담직업전문학교 수강생 정보      \n"+
 				"┌───────┬───────────────────────┐\n"+
 			    "│ ID    │ " + id+"\t\t│\n"+
 				"│ NAME  │ " + name+"\t\t│\n"+ 

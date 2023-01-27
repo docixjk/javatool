@@ -1,17 +1,14 @@
 package com.yedam.java.project;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.sql.*;
+import java.util.*;
+
 
 public class TBL_USER_DAO {
 	Connection conn; // DB와 연결된 객체
-	PreparedStatement pstm = null; // SQL문을 담는 객체
-	Statement stmt = null;
+	PreparedStatement pstm = null; 
+	Statement stmt = null; // SQL문을 담는 객체
 	ResultSet rs = null; // SQL문 결과를 담는 객체
 
 	public List<TBL_USER_VO> empVolist() { // 클래스를 하나 만들어야됨
@@ -28,7 +25,7 @@ public class TBL_USER_DAO {
 				emp.setAge(rs.getInt("age"));
 				emp.setPhoneNumber(rs.getString("phonenumber"));
 				emp.setSubject(rs.getString("subject"));
-				
+
 				list.add(emp);
 			}
 		} catch (SQLException e) {
@@ -117,43 +114,16 @@ public class TBL_USER_DAO {
 
 	// 로그인
 	public boolean login(String id, String pw) {
-		String sql = "select * from TBL_USER where id=? and pw =?";
-		try {
-			conn = DBConnection.getConnection();
-			pstm = conn.prepareStatement(sql);
-			pstm.setString(1, id);
-			pstm.setString(2, pw);
-			rs = pstm.executeQuery();
-			if (rs.next()) {
-				return true;
-			}
-			System.out.println("아이디 또는 비밀번호가 맞지 않습니다.");
-			return false;
-
-		} catch (SQLException e) {
-			System.out.println("login sql문 오류");
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (pstm != null) {
-					pstm.close();
-				}
-				if (conn != null) {
-					conn.close();
-				}
-			} catch (SQLException e) {
-				throw new RuntimeException(e.getMessage());
-			}
+		
+		if(id.equals("yedam") && pw.equals("yedam")) {
+			return true;
 		}
-
 		return false;
 	}
 
 	// 수강생 정보 ( 해당 )
 	public TBL_USER_VO student(String id) {
-		String sql = "SELECT * FROM TBL_USER WHERE id='"+id+"'"; //db에서는 ' '만 됨
+		String sql = "SELECT * FROM TBL_USER WHERE id='" + id + "'"; // db에서는 ' '만 됨
 		try {
 			conn = DBConnection.getConnection();
 			stmt = conn.createStatement();
@@ -173,6 +143,24 @@ public class TBL_USER_DAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public int updEmp(TBL_USER_VO emp) {
+		String sql = "UPDATE tbl_user SET pw = ?, phonenumber = ?, subject = ? WHERE id = ?";
+		int r = 0;
+		try {
+			conn = DBConnection.getConnection();
+			pstm = conn.prepareStatement(sql); // << 파라미터 값을 입력할때 씀
+			pstm.setString(1, emp.getPw());
+			pstm.setString(2, emp.getPhoneNumber());
+			pstm.setString(3, emp.getSubject());
+			pstm.setString(4, emp.getId());
+			
+			r = pstm.executeUpdate(); // 처리된 건수
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return r;
 	}
 
 	// 수강생 탈퇴
